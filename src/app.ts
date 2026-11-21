@@ -1,4 +1,4 @@
-// news.itonami.cloud — Datomic + ClojureScript edge worker (ADR-2606161200 rebuild).
+// news.itonami.app — Datomic + ClojureScript edge worker (ADR-2606161200 rebuild).
 //
 // Architecture (approved plan sorted-shimmying-beaver):
 //   client/agent ─XRPC─▶ this Worker (TS shell)
@@ -330,7 +330,7 @@ export default createWorkerExport((sdk) => {
   const env = sdk.env as unknown as Env;
   sdk.app
     .command(nsid("ai.gftd.apps.news.publishIntel"), (_c, b) => hPublishIntel(sdk, env, b),
-      asAgentTool("Publish a prepared intel brief as an attributed news.itonami.cloud writer-DID post"),
+      asAgentTool("Publish a prepared intel brief as an attributed news.itonami.app writer-DID post"),
       withCapabilityTags("write", "intel"), withOCELEvent("news.publish"))
     .command(nsid("ai.gftd.apps.news.commitArticle"), (_c, b) => hCommitArticle(sdk, env, b),
       asAgentTool("Commit an RSS-pipeline article (Datomic) and optionally post"),

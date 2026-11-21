@@ -1,8 +1,8 @@
 {
   "@context": "https://gftd.ai/ns/magatama/v1",
-  "@id": "did:web:news.gftd.ai",
+  "@id": "did:web:news.itonami.app",
   "accent": "#0ea5e9",
-  "convoSystemPrompt": "You are the news.gftd.ai agent — the A layer (primary-source collection). You ingest and land primary sources (RSS, government filings, live audio, on-chain, datasets, original reporting) with provenance into the kotoba Datomic source corpus. You do NOT publish to subjects — the A→B medium (linking, generation, delivery) is media.gftd.ai. Respond helpfully in the user's language.",
+  "convoSystemPrompt": "You are the news.itonami.app agent — the A layer (primary-source collection). You ingest and land primary sources (RSS, government filings, live audio, on-chain, datasets, original reporting) with provenance into the kotoba Datomic source corpus. You do NOT publish to subjects — the A→B medium (linking, generation, delivery) is media.gftd.ai. Respond helpfully in the user's language.",
   "deploy": {},
   "duties": [
     "勤労の義務"
@@ -35,8 +35,8 @@
       "news_get_article"
     ],
     "category": "media",
-    "description": "news.gftd.ai — primary-source collection (A layer): ingests RSS / government / live audio / on-chain / datasets / original reporting with provenance into the kotoba Datomic source corpus. The A→B medium is media.gftd.ai (ADR-2606161200).",
-    "displayName": "News (news.gftd.ai) — primary sources",
+    "description": "news.itonami.app — primary-source collection (A layer): ingests RSS / government / live audio / on-chain / datasets / original reporting with provenance into the kotoba Datomic source corpus. The A→B medium is media.gftd.ai (ADR-2606161200).",
+    "displayName": "News (news.itonami.app) — primary sources",
     "isBot": true,
     "operator": "etzhayyim",
     "protocols": [
@@ -47,7 +47,7 @@
   "project": "news",
   "routes": [
     {
-      "host": "news.gftd.ai",
+      "host": "news.itonami.app",
       "paths": [
         "/"
       ],
@@ -59,12 +59,12 @@
     "channels": [
       {
         "default": true,
-        "description": "news.gftd.ai publishing pipeline updates",
+        "description": "news.itonami.app publishing pipeline updates",
         "kind": "public",
         "name": "news-feed"
       }
     ],
-    "description": "news.gftd.ai — Datomic-backed intel + article publishing",
+    "description": "news.itonami.app — Datomic-backed intel + article publishing",
     "historyVisibility": "world-readable",
     "joinRule": "public",
     "name": "News"

@@ -8,14 +8,14 @@
   // 2026-09-02: gftd.ai → itonami.cloud へ（オーナー指示「gftd.ai は deprecated」）。
   // 所有 org(cloud-itonami)と配信ゾーンの食い違いを解消する。custom_domain の形は
   // 姉妹 repo cloud-itonami/media が 2026-08-09 に着地させたものに揃えた。
-  // 旧 news.gftd.ai は移設時点で応答なし（実測: 接続タイムアウト。同じ client から
+  // 旧 news.itonami.app は移設時点で応答なし（実測: 接続タイムアウト。同じ client から
   // gftd.ai 自身は 200）なので、この付け替えで止まるトラフィックは無い。
   "routes": [
-    { "pattern": "news.itonami.cloud", "custom_domain": true }
+    { "pattern": "news.itonami.app", "custom_domain": true }
   ],
   "vars": {
     "NEWS_VERSION": "0.1.0-datomic-cljs",
-    "NEWS_ACTOR_DID": "did:web:news.itonami.cloud",
+    "NEWS_ACTOR_DID": "did:web:news.itonami.app",
     // Canonical kotobase endpoint (owner 2026-06-11). kotobase.net proxies the
     // datomic surface (reads + operator-gated transact/with) to the kotoba pod
     // and translates the tenant NSID below → com.etzhayyim.apps.kotoba.*.
@@ -44,7 +44,7 @@
     "enabled": true
   }
   // secrets (wrangler secret put):
-  //   KOTOBA_BEARER — news's OWN session JWT (sub=did:web:news.itonami.cloud),
+  //   KOTOBA_BEARER — news's OWN session JWT (sub=did:web:news.itonami.app),
   //                   issued by the authn service. ⚠ 発行元は authn.gftd.ai だった
   //                   が gftd.ai は deprecated —— 再発行時に itonami 側の issuer を
   //                   使うこと。kotobase.net authorizes news as an
